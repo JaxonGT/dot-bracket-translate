@@ -11,6 +11,9 @@
     <OutputPath>.</OutputPath>
     <Name>dot-bracket-translate</Name>
     <RootNamespace>dot-bracket-translate</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>-i in1.txt in2.txt -o out.txt</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
