@@ -20,7 +20,6 @@ if not ((input1).endswith(".txt") and (input2).endswith(".txt")):
     sys.exit(0)
 
 lines = []
-positions = []
 headers = []
 edit = []
 
@@ -44,20 +43,20 @@ if not "-" in lines[0] or not "." in edit[0]:
     input("Input 1 should contain unknowns. Input 2 should contain dot-brackets. Press any key to exit")
     sys.exit(0)
 
-for pos in range(len(lines[0])):
-    if lines[0][pos] == "-":
-        positions.append(pos)
+for i in range(len(lines)):
+    positions = []
+    for pos in range(len(lines[i])):
+        if lines[i][pos] == "-":
+            positions.append(pos)
 
-for count in range(len(positions)):
-    for j in range(len(edit)):
-        edit[j] = edit[j][:positions[count]] + "-" + edit[j][positions[count]:]
+    for count in range(len(positions)):
+        edit[i] = edit[i][:positions[count]] + "-" + edit[i][positions[count]:]
 
 fo = open(output, "w")
 
 for k in range(len(headers)):
     fo.write(headers[k])
     fo.write(edit[k])
-    fo.write(headers[k])
     fo.write(lines[k])
 
 fo.close()
