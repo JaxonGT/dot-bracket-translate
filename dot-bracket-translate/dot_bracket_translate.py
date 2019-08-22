@@ -57,5 +57,7 @@ fo = open(output, "w")
 for k in range(len(headers)):
     fo.write(headers[k])
     fo.write(edit[k])
+    fo.write(headers[k])
+    fo.write(lines[k])
 
 fo.close()
